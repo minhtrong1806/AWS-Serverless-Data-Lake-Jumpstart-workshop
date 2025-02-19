@@ -12,21 +12,21 @@
     <title>Create a Glue Crawler :: AWS Serverless Data Lake Jumpstart</title>
 
     
-    <link href="/css/nucleus.css?1739954366" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1739954366" rel="stylesheet">
-    <link href="/css/hybrid.css?1739954366" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1739954366" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1739954366" rel="stylesheet">
-    <link href="/css/auto-complete.css?1739954366" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1739954366" rel="stylesheet">
-    <link href="/css/theme.css?1739954366" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1739954366" rel="stylesheet">
+    <link href="/css/nucleus.css?1739955365" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1739955365" rel="stylesheet">
+    <link href="/css/hybrid.css?1739955365" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1739955365" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1739955365" rel="stylesheet">
+    <link href="/css/auto-complete.css?1739955365" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1739955365" rel="stylesheet">
+    <link href="/css/theme.css?1739955365" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1739955365" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1739954366" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1739955365" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1739954366"></script>
+    <script src="/js/jquery-3.3.1.min.js?1739955365"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1739954366"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1739954366"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1739955365"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1739955365"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1739954366"></script>
+<script type="text/javascript" src="/js/search.js?1739955365"></script>
 
     
   </div>
@@ -1021,7 +1021,7 @@
                   
                     
                     
-                      <option id="en" value="/3-discovering-cataloging/3.1-create-a-glue-crawler/" selected>English</option>
+                      <option id="vi" value="/vi/3-discovering-cataloging/3.1-create-a-glue-crawler/">Tiếng Việt</option>
                     
                   
               
@@ -1035,7 +1035,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/3-discovering-cataloging/3.1-create-a-glue-crawler/">Tiếng Việt</option>
+                      <option id="en" value="/3-discovering-cataloging/3.1-create-a-glue-crawler/" selected>English</option>
                     
                   
               
@@ -1176,44 +1176,44 @@
 <ol>
 <li>
 <p>Truy cập vào <strong>AWS Glue Console</strong>.<br>
-<img alt="001" src="../../images/3.discovering-cataloging/3.1/001.png"></p>
+<img alt="001" src="../../../images/3.discovering-cataloging/3.1/001.png"></p>
 </li>
 <li>
 <p>Ở menu điều hướng bên trái, nhấp vào <strong>Crawlers</strong>.<br>
-<img alt="002" src="../../images/3.discovering-cataloging/3.1/002.png"></p>
+<img alt="002" src="../../../images/3.discovering-cataloging/3.1/002.png"></p>
 </li>
 <li>
 <p>Trên trang <strong>Crawlers</strong>, nhấp vào <strong>Create a crawler</strong>.<br>
-<img alt="003" src="../../images/3.discovering-cataloging/3.1/003.png"></p>
+<img alt="003" src="../../../images/3.discovering-cataloging/3.1/003.png"></p>
 </li>
 <li>
 <p>Trong mục đặt tên, nhập <code>nyc-taxi-crawler</code> rồi nhấp <strong>Next</strong>.<br>
-<img alt="004" src="../../images/3.discovering-cataloging/3.1/004.png"></p>
+<img alt="004" src="../../../images/3.discovering-cataloging/3.1/004.png"></p>
 </li>
 <li>
 <p>Ở màn hình <strong>Choose data sources and classifiers</strong>, điền các thông tin sau và nhấp <strong>Next</strong>:</p>
 <ul>
 <li>Nhấp vào <strong>Add a data source</strong>.<br>
-<img alt="005-1" src="../../images/3.discovering-cataloging/3.1/005-1.png"></li>
+<img alt="005-1" src="../../../images/3.discovering-cataloging/3.1/005-1.png"></li>
 <li>Chọn <strong>Data source</strong> → <strong>S3</strong>.</li>
 <li>Chọn <strong>Location of S3 data</strong> → <strong>In this account</strong>.</li>
 <li>Nhập đường dẫn S3: <code>s3://serverlessanalytics-[your-account-id]-raw/nyc-taxi/</code>.</li>
 <li>Trong mục <strong>Subsequent crawler runs</strong>, chọn <strong>Crawl all sub-folders</strong>.</li>
 <li>Nhấp <strong>Add an S3 data source</strong>.
-<img alt="005-2" src="../../images/3.discovering-cataloging/3.1/005-2.png"></li>
+<img alt="005-2" src="../../../images/3.discovering-cataloging/3.1/005-2.png"></li>
 </ul>
 </li>
 <li>
 <p>Ở màn hình <strong>Configure security settings</strong>, chọn <strong>ServerlessAnalyticsRole</strong> trong danh sách <strong>Existing IAM role</strong>, sau đó nhấp <strong>Next</strong>.
-<img alt="006" src="../../images/3.discovering-cataloging/3.1/006.png"></p>
+<img alt="006" src="../../../images/3.discovering-cataloging/3.1/006.png"></p>
 </li>
 <li>
 <p>Ở màn hình <strong>Set output and scheduling</strong>, nhấp vào <strong>Add database</strong>.<br>
-<img alt="007-1" src="../../images/3.discovering-cataloging/3.1/007-1.png"></p>
+<img alt="007-1" src="../../../images/3.discovering-cataloging/3.1/007-1.png"></p>
 <ul>
 <li>Nhập <code>nyctaxi_db</code> làm tên cơ sở dữ liệu.</li>
 <li>Nhấp <strong>Create database</strong>.<br>
-<img alt="007-2" src="../../images/3.discovering-cataloging/3.1/007-2.png"></li>
+<img alt="007-2" src="../../../images/3.discovering-cataloging/3.1/007-2.png"></li>
 </ul>
 </li>
 <li>
@@ -1224,11 +1224,11 @@
 </li>
 <li>
 <p>Ở mục <strong>Crawler schedule</strong>, giữ nguyên tần suất <strong>On demand</strong>, sau đó nhấp <strong>Next</strong>.<br>
-<img alt="007-3" src="../../images/3.discovering-cataloging/3.1/007-3.png"></p>
+<img alt="007-3" src="../../../images/3.discovering-cataloging/3.1/007-3.png"></p>
 </li>
 <li>
 <p>Xem lại thông tin, sau đó nhấp <strong>Create crawler</strong> để hoàn tất. 🚀
-<img alt="008" src="../../images/3.discovering-cataloging/3.1/008.png"></p>
+<img alt="008" src="../../../images/3.discovering-cataloging/3.1/008.png"></p>
 </li>
 </ol>
 
@@ -1802,19 +1802,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1739954366"></script>
-    <script src="/js/perfect-scrollbar.min.js?1739954366"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1739954366"></script>
-    <script src="/js/jquery.sticky.js?1739954366"></script>
-    <script src="/js/featherlight.min.js?1739954366"></script>
-    <script src="/js/highlight.pack.js?1739954366"></script>
+    <script src="/js/clipboard.min.js?1739955365"></script>
+    <script src="/js/perfect-scrollbar.min.js?1739955365"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1739955365"></script>
+    <script src="/js/jquery.sticky.js?1739955365"></script>
+    <script src="/js/featherlight.min.js?1739955365"></script>
+    <script src="/js/highlight.pack.js?1739955365"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1739954366"></script>
-    <script src="/js/learn.js?1739954366"></script>
-    <script src="/js/hugo-learn.js?1739954366"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1739955365"></script>
+    <script src="/js/learn.js?1739955365"></script>
+    <script src="/js/hugo-learn.js?1739955365"></script>
 
-    <link href="/mermaid/mermaid.css?1739954366" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1739954366"></script>
+    <link href="/mermaid/mermaid.css?1739955365" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1739955365"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Connect to a data source on AWS Serverless Data Lake Jumpstart</title>
+    <link>/7-visualizing/7.2-connect-to-a-data-source/</link>
+    <description>Recent content in Connect to a data source on AWS Serverless Data Lake Jumpstart</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="/7-visualizing/7.2-connect-to-a-data-source/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

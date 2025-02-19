@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Làm việc với dữ liệu CSV được bao trong dấu nháy kép on AWS Serverless Data Lake Jumpstart</title>
+    <link>/vi/4-exploring/4.3-working-with-csv-data-enclosed-in-quotes/</link>
+    <description>Recent content in Làm việc với dữ liệu CSV được bao trong dấu nháy kép on AWS Serverless Data Lake Jumpstart</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi</language>
+    <atom:link href="/vi/4-exploring/4.3-working-with-csv-data-enclosed-in-quotes/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

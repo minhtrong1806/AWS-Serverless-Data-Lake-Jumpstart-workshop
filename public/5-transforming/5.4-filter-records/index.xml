@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lọc dữ liệu on AWS Serverless Data Lake Jumpstart</title>
+    <title>Filter records on AWS Serverless Data Lake Jumpstart</title>
     <link>//localhost:1313/5-transforming/5.4-filter-records/</link>
-    <description>Recent content in Lọc dữ liệu on AWS Serverless Data Lake Jumpstart</description>
+    <description>Recent content in Filter records on AWS Serverless Data Lake Jumpstart</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>vi</language>
+    <language>en</language>
     <atom:link href="//localhost:1313/5-transforming/5.4-filter-records/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

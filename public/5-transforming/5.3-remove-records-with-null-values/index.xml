@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Loại bỏ các bản ghi có giá trị NULL on AWS Serverless Data Lake Jumpstart</title>
+    <title>Remove records with NULL values on AWS Serverless Data Lake Jumpstart</title>
     <link>//localhost:1313/5-transforming/5.3-remove-records-with-null-values/</link>
-    <description>Recent content in Loại bỏ các bản ghi có giá trị NULL on AWS Serverless Data Lake Jumpstart</description>
+    <description>Recent content in Remove records with NULL values on AWS Serverless Data Lake Jumpstart</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>vi</language>
+    <language>en</language>
     <atom:link href="//localhost:1313/5-transforming/5.3-remove-records-with-null-values/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

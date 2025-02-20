@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Thêm và kết hợp một tập dữ liệu khác on AWS Serverless Data Lake Jumpstart</title>
+    <title>Add and join another dataset on AWS Serverless Data Lake Jumpstart</title>
     <link>//localhost:1313/5-transforming/5.7-add-and-join-another-dataset/</link>
-    <description>Recent content in Thêm và kết hợp một tập dữ liệu khác on AWS Serverless Data Lake Jumpstart</description>
+    <description>Recent content in Add and join another dataset on AWS Serverless Data Lake Jumpstart</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>vi</language>
+    <language>en</language>
     <atom:link href="//localhost:1313/5-transforming/5.7-add-and-join-another-dataset/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

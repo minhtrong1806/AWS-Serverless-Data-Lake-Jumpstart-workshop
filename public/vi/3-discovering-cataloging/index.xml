@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lập danh mục dữ liệu on AWS Serverless Data Lake Jumpstart</title>
-    <link>/vi/3-discovering-cataloging/</link>
+    <link>//localhost:1313/vi/3-discovering-cataloging/</link>
     <description>Recent content in Lập danh mục dữ liệu on AWS Serverless Data Lake Jumpstart</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi</language>
-    <atom:link href="/vi/3-discovering-cataloging/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/vi/3-discovering-cataloging/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

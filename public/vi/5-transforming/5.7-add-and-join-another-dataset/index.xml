@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Thêm và kết hợp một tập dữ liệu khác on AWS Serverless Data Lake Jumpstart</title>
-    <link>/vi/5-transforming/5.7-add-and-join-another-dataset/</link>
+    <link>//localhost:1313/vi/5-transforming/5.7-add-and-join-another-dataset/</link>
     <description>Recent content in Thêm và kết hợp một tập dữ liệu khác on AWS Serverless Data Lake Jumpstart</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi</language>
-    <atom:link href="/vi/5-transforming/5.7-add-and-join-another-dataset/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/vi/5-transforming/5.7-add-and-join-another-dataset/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

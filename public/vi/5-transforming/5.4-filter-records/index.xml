@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lọc dữ liệu on AWS Serverless Data Lake Jumpstart</title>
-    <link>/vi/5-transforming/5.4-filter-records/</link>
+    <link>//localhost:1313/vi/5-transforming/5.4-filter-records/</link>
     <description>Recent content in Lọc dữ liệu on AWS Serverless Data Lake Jumpstart</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi</language>
-    <atom:link href="/vi/5-transforming/5.4-filter-records/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/vi/5-transforming/5.4-filter-records/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

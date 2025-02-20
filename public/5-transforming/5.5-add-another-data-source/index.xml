@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Add another data source on AWS Serverless Data Lake Jumpstart</title>
-    <link>/5-transforming/5.5-add-another-data-source/</link>
-    <description>Recent content in Add another data source on AWS Serverless Data Lake Jumpstart</description>
+    <title>Thêm một nguồn dữ liệu khác on AWS Serverless Data Lake Jumpstart</title>
+    <link>//localhost:1313/5-transforming/5.5-add-another-data-source/</link>
+    <description>Recent content in Thêm một nguồn dữ liệu khác on AWS Serverless Data Lake Jumpstart</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <atom:link href="/5-transforming/5.5-add-another-data-source/index.xml" rel="self" type="application/rss+xml" />
+    <language>vi</language>
+    <atom:link href="//localhost:1313/5-transforming/5.5-add-another-data-source/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

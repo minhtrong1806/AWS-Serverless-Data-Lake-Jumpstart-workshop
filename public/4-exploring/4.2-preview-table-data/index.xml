@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Preview table data on AWS Serverless Data Lake Jumpstart</title>
-    <link>/4-exploring/4.2-preview-table-data/</link>
-    <description>Recent content in Preview table data on AWS Serverless Data Lake Jumpstart</description>
+    <title>Xem trước dữ liệu bảng on AWS Serverless Data Lake Jumpstart</title>
+    <link>//localhost:1313/4-exploring/4.2-preview-table-data/</link>
+    <description>Recent content in Xem trước dữ liệu bảng on AWS Serverless Data Lake Jumpstart</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <atom:link href="/4-exploring/4.2-preview-table-data/index.xml" rel="self" type="application/rss+xml" />
+    <language>vi</language>
+    <atom:link href="//localhost:1313/4-exploring/4.2-preview-table-data/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

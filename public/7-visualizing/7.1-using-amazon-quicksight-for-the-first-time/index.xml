@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Using Amazon QuickSight for the first time on AWS Serverless Data Lake Jumpstart</title>
-    <link>/7-visualizing/7.1-using-amazon-quicksight-for-the-first-time/</link>
-    <description>Recent content in Using Amazon QuickSight for the first time on AWS Serverless Data Lake Jumpstart</description>
+    <title>Sử dụng Amazon QuickSight lần đầu tiên on AWS Serverless Data Lake Jumpstart</title>
+    <link>//localhost:1313/7-visualizing/7.1-using-amazon-quicksight-for-the-first-time/</link>
+    <description>Recent content in Sử dụng Amazon QuickSight lần đầu tiên on AWS Serverless Data Lake Jumpstart</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <atom:link href="/7-visualizing/7.1-using-amazon-quicksight-for-the-first-time/index.xml" rel="self" type="application/rss+xml" />
+    <language>vi</language>
+    <atom:link href="//localhost:1313/7-visualizing/7.1-using-amazon-quicksight-for-the-first-time/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

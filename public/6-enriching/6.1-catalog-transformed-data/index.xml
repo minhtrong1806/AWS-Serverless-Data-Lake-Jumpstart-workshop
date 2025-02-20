@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Catalog transformed data on AWS Serverless Data Lake Jumpstart</title>
-    <link>/6-enriching/6.1-catalog-transformed-data/</link>
-    <description>Recent content in Catalog transformed data on AWS Serverless Data Lake Jumpstart</description>
+    <title>Lập danh mục dữ liệu đã được chuyển đổi on AWS Serverless Data Lake Jumpstart</title>
+    <link>//localhost:1313/6-enriching/6.1-catalog-transformed-data/</link>
+    <description>Recent content in Lập danh mục dữ liệu đã được chuyển đổi on AWS Serverless Data Lake Jumpstart</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <atom:link href="/6-enriching/6.1-catalog-transformed-data/index.xml" rel="self" type="application/rss+xml" />
+    <language>vi</language>
+    <atom:link href="//localhost:1313/6-enriching/6.1-catalog-transformed-data/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

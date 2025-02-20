@@ -10,26 +10,26 @@ pre : " <b> 5.2. </b> "
 ### Thêm dữ liệu Yellow Trips từ Amazon S3
 
 1. Nhấp vào biểu tượng **Source**, chọn **S3**.
-![001](../../../images/5.transforming/5.2/001.png)
+![001](../../images/5.transforming/5.2/001.png)
 
 2. Trong nút **Data source – S3 bucket**, nhập thông tin sau:
    - **Node properties tab**, **Name** – Yellow Trip Data
    - **Data source properties tab**, **Database** – nyctaxi_db
    - **Data source properties tab**, **Table** – raw_yellow_tripdata
-   ![002](../../../images/5.transforming/5.2/002.png)
+   ![002](../../images/5.transforming/5.2/002.png)
 3. Nhấp vào **Save**. Nhớ lưu công việc của bạn khi tiến hành xây dựng các bước chuyển đổi dữ liệu.
 
 ### Xem xét sơ đồ dữ liệu kết quả và xem trước dữ liệu
 
 4. Truy cập vào tab **Output schema** để xem sơ đồ dữ liệu kết quả.
-![003](../../../images/5.transforming/5.2/003.png)
+![003](../../images/5.transforming/5.2/003.png)
 
 5. Truy cập vào tab **Data preview** để kiểm tra mẫu dữ liệu trong khi chỉnh sửa job của bạn.
     - Chọn **ServerlessAnalyticsRole**, nhấp vào **Confirm**.
     - Nhấp vào **Start session**.
-    ![004](../../../images/5.transforming/5.2/004.png)
+    ![004](../../images/5.transforming/5.2/004.png)
     - Xem xét dữ liệu.
-    ![005](../../../images/5.transforming/5.2/005.png)
+    ![005](../../images/5.transforming/5.2/005.png)
 
 {{% notice info %}}
 AWS Glue Studio hiện cho phép bạn xem trước dữ liệu tại mỗi bước trong quá trình tạo job trực quan, giúp bạn kiểm tra và gỡ lỗi các chuyển đổi mà không cần lưu hoặc chạy job.

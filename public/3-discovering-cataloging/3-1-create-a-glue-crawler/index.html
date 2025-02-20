@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Enrich transformed data :: AWS Serverless Data Lake Jumpstart</title>
+    <title>Create a Glue Crawler :: AWS Serverless Data Lake Jumpstart</title>
 
     
     <link href="/css/nucleus.css?1740029466" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/6-enriching/6.3-enrich-transformed-data/">
+  <body class="" data-url="/3-discovering-cataloging/3-1-create-a-glue-crawler/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -135,7 +135,7 @@
   
     
     <li data-nav-id="/3-discovering-cataloging/" title="Discovering and Cataloging Data" class="dd-item 
-        
+        parent
         
         
         ">
@@ -167,7 +167,7 @@
     
     <li data-nav-id="/3-discovering-cataloging/3-1-create-a-glue-crawler/" title="Create a Glue Crawler" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/3-discovering-cataloging/3-1-create-a-glue-crawler/">
@@ -697,7 +697,7 @@
   
     
     <li data-nav-id="/6-enriching/" title="Enriching Data" class="dd-item 
-        parent
+        
         
         
         ">
@@ -785,7 +785,7 @@
     
     <li data-nav-id="/6-enriching/6.3-enrich-transformed-data/" title="Enrich transformed data" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/6-enriching/6.3-enrich-transformed-data/">
@@ -1021,7 +1021,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:1313/vi/6-enriching/6.3-enrich-transformed-data/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/3-discovering-cataloging/3-1-create-a-glue-crawler/">Tiếng Việt</option>
                     
                   
               
@@ -1035,7 +1035,7 @@
                   
                     
                     
-                      <option id="en" value="//localhost:1313/6-enriching/6.3-enrich-transformed-data/" selected>English</option>
+                      <option id="en" value="//localhost:1313/3-discovering-cataloging/3-1-create-a-glue-crawler/" selected>English</option>
                     
                   
               
@@ -1127,7 +1127,7 @@
             
           
           
-            <a href='/'>AWS Serverless Data Lake Jumpstart</a> > <a href='/6-enriching/'>Enriching Data</a> > Enrich transformed data
+            <a href='/'>AWS Serverless Data Lake Jumpstart</a> > <a href='/3-discovering-cataloging/'>Discovering and Cataloging Data</a> > Create a Glue Crawler
           
         
           
@@ -1142,11 +1142,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#làm-giàu-dữ-liệu-đã-chuyển-đổi">Làm giàu dữ liệu đã chuyển đổi</a></li>
-      </ul>
-    </li>
+    <li><a href="#tạo-glue-crawler">Tạo Glue Crawler</a></li>
   </ul>
 </nav>
     </div>
@@ -1164,7 +1160,7 @@
           
             <h1>
               
-              Enrich transformed data
+              Create a Glue Crawler
             </h1>
           
 
@@ -1172,84 +1168,69 @@
 
 
 
-	<h3 id="làm-giàu-dữ-liệu-đã-chuyển-đổi">Làm giàu dữ liệu đã chuyển đổi</h3>
+	<h2 id="tạo-glue-crawler">Tạo Glue Crawler</h2>
+
+<div class="notices info" ><p><strong>Glue Crawler</strong> là một tính năng giúp tự động suy luận <strong>schema của cơ sở dữ liệu và bảng</strong> từ dữ liệu nguồn, sau đó lưu trữ <strong>metadata</strong> tương ứng trong <strong>AWS Glue Data Catalog</strong>.</p>
+</div>
+
 <ol>
-<li>Chạy câu truy vấn sau để tạo một view, làm giàu bảng với dữ liệu bổ sung:</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">VIEW</span> v_yellow_tripdata
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">AS</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">CASE</span> vendor_id
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Creative Mobile&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;VeriFone&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">ELSE</span> <span style="color:#e6db74">&#39;No Data&#39;</span>
-</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">END</span> <span style="color:#e6db74">&#34;vendor_name&#34;</span>,
-</span></span><span style="display:flex;"><span>       pickup_datetime,
-</span></span><span style="display:flex;"><span>       dropoff_datetime,
-</span></span><span style="display:flex;"><span>       passenger_count,
-</span></span><span style="display:flex;"><span>       trip_distance,
-</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">CASE</span> ratecodeid
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Standard Rate&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;JFK&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Newark&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Nassau/Westchester&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">5</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Negotiated Fare&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">6</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Group Ride&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">99</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Special Rate&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">ELSE</span> <span style="color:#e6db74">&#39;No Data&#39;</span>
-</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">END</span> <span style="color:#e6db74">&#34;rate_type&#34;</span>,
-</span></span><span style="display:flex;"><span>       store_and_fwd_flag,
-</span></span><span style="display:flex;"><span>       pu_borough,
-</span></span><span style="display:flex;"><span>       pu_zone,
-</span></span><span style="display:flex;"><span>       pu_service_zone,
-</span></span><span style="display:flex;"><span>       do_borough,
-</span></span><span style="display:flex;"><span>       do_zone,
-</span></span><span style="display:flex;"><span>       do_service_zone,
-</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">CASE</span> payment_type
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Credit Card&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Cash&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;No Charge&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Dispute&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">5</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Unknown&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">6</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Voided Trip&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">ELSE</span> <span style="color:#e6db74">&#39;No Data&#39;</span>
-</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">END</span> <span style="color:#e6db74">&#34;payment_type&#34;</span>,
-</span></span><span style="display:flex;"><span>       fare_amount,
-</span></span><span style="display:flex;"><span>       extra,
-</span></span><span style="display:flex;"><span>       mta_tax,
-</span></span><span style="display:flex;"><span>       tip_amount,
-</span></span><span style="display:flex;"><span>       tolls_amount,
-</span></span><span style="display:flex;"><span>       improvement_surcharge,
-</span></span><span style="display:flex;"><span>       congestion_surcharge,
-</span></span><span style="display:flex;"><span>       total_amount
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>   yellow_tripdata;
-</span></span></code></pre></div><p><img alt="001" src="../../images/6.enriching/6.3/001.png"></p>
-<ol start="2">
 <li>
-<p>Chọn <strong>Preview table</strong> để kiểm tra dữ liệu trong view <code>v_yellow_tripdata</code>.
-<img alt="002" src="../../images/6.enriching/6.3/002.png">
-<img alt="003" src="../../images/6.enriching/6.3/003.png"></p>
+<p>Truy cập vào <strong>AWS Glue Console</strong>.<br>
+<img alt="001" src="../../../images/3.discovering-cataloging/3.1/001.png"></p>
 </li>
 <li>
-<p>Chạy câu truy vấn sau để lấy thông tin chi tiết:</p>
+<p>Ở menu điều hướng bên trái, nhấp vào <strong>Crawlers</strong>.<br>
+<img alt="002" src="../../../images/3.discovering-cataloging/3.1/002.png"></p>
+</li>
+<li>
+<p>Trên trang <strong>Crawlers</strong>, nhấp vào <strong>Create a crawler</strong>.<br>
+<img alt="003" src="../../../images/3.discovering-cataloging/3.1/003.png"></p>
+</li>
+<li>
+<p>Trong mục đặt tên, nhập <code>nyc-taxi-crawler</code> rồi nhấp <strong>Next</strong>.<br>
+<img alt="004" src="../../../images/3.discovering-cataloging/3.1/004.png"></p>
+</li>
+<li>
+<p>Ở màn hình <strong>Choose data sources and classifiers</strong>, điền các thông tin sau và nhấp <strong>Next</strong>:</p>
+<ul>
+<li>Nhấp vào <strong>Add a data source</strong>.<br>
+<img alt="005-1" src="../../../images/3.discovering-cataloging/3.1/005-1.png"></li>
+<li>Chọn <strong>Data source</strong> → <strong>S3</strong>.</li>
+<li>Chọn <strong>Location of S3 data</strong> → <strong>In this account</strong>.</li>
+<li>Nhập đường dẫn S3: <code>s3://serverlessanalytics-[your-account-id]-raw/nyc-taxi/</code>.</li>
+<li>Trong mục <strong>Subsequent crawler runs</strong>, chọn <strong>Crawl all sub-folders</strong>.</li>
+<li>Nhấp <strong>Add an S3 data source</strong>.
+<img alt="005-2" src="../../../images/3.discovering-cataloging/3.1/005-2.png"></li>
+</ul>
+</li>
+<li>
+<p>Ở màn hình <strong>Configure security settings</strong>, chọn <strong>ServerlessAnalyticsRole</strong> trong danh sách <strong>Existing IAM role</strong>, sau đó nhấp <strong>Next</strong>.
+<img alt="006" src="../../../images/3.discovering-cataloging/3.1/006.png"></p>
+</li>
+<li>
+<p>Ở màn hình <strong>Set output and scheduling</strong>, nhấp vào <strong>Add database</strong>.<br>
+<img alt="007-1" src="../../../images/3.discovering-cataloging/3.1/007-1.png"></p>
+<ul>
+<li>Nhập <code>nyctaxi_db</code> làm tên cơ sở dữ liệu.</li>
+<li>Nhấp <strong>Create database</strong>.<br>
+<img alt="007-2" src="../../../images/3.discovering-cataloging/3.1/007-2.png"></li>
+</ul>
+</li>
+<li>
+<p>Quay lại tab trước (<strong>Set output and scheduling</strong>), nhấp <strong>Refresh</strong> trong mục <strong>Target database</strong> và chọn <strong>nyctaxi_db</strong> vừa tạo.</p>
+</li>
+<li>
+<p>Trong mục <strong>Table name prefix</strong>, nhập <strong>raw_</strong> (tùy chọn).</p>
+</li>
+<li>
+<p>Ở mục <strong>Crawler schedule</strong>, giữ nguyên tần suất <strong>On demand</strong>, sau đó nhấp <strong>Next</strong>.<br>
+<img alt="007-3" src="../../../images/3.discovering-cataloging/3.1/007-3.png"></p>
+</li>
+<li>
+<p>Xem lại thông tin, sau đó nhấp <strong>Create crawler</strong> để hoàn tất. 🚀
+<img alt="008" src="../../../images/3.discovering-cataloging/3.1/008.png"></p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> vendor_name <span style="color:#e6db74">&#34;Vendor&#34;</span>,
-</span></span><span style="display:flex;"><span>       rate_type <span style="color:#e6db74">&#34;Rate Type&#34;</span>, 
-</span></span><span style="display:flex;"><span>       payment_type <span style="color:#e6db74">&#34;Payment Type&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(fare_amount), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Fare&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(extra), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Extra&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(mta_tax), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;MTA&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(tip_amount), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Tip&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(tolls_amount), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Toll&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(improvement_surcharge), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Improvement&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(congestion_surcharge), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Congestion&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(total_amount), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Total&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>   v_yellow_tripdata
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> vendor_name,
-</span></span><span style="display:flex;"><span>         rate_type,
-</span></span><span style="display:flex;"><span>         payment_type
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>;
-</span></span></code></pre></div><p><img alt="004" src="../../images/6.enriching/6.3/004.png"></p>
 
 
 
@@ -1325,6 +1306,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1334,6 +1316,254 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1449,22 +1679,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1472,242 +1686,6 @@
             
             
                 
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1811,10 +1789,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/6-enriching/6.2-validate-transformed-data/" title="Validate transformed data"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/3-discovering-cataloging/" title="Discovering and Cataloging Data"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/7-visualizing/" title="Visualizing Data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/3-discovering-cataloging/3.2-run-the-glue-crawler/" title="Run the Glue Crawler" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

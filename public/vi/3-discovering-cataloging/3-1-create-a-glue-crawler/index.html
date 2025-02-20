@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
+<html lang="vi" class="js csstransforms3d">
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Enrich transformed data :: AWS Serverless Data Lake Jumpstart</title>
+    <title>Khởi tạo Glue Crawler :: AWS Serverless Data Lake Jumpstart</title>
 
     
-    <link href="/css/nucleus.css?1740029466" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1740029466" rel="stylesheet">
-    <link href="/css/hybrid.css?1740029466" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1740029466" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1740029466" rel="stylesheet">
-    <link href="/css/auto-complete.css?1740029466" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1740029466" rel="stylesheet">
-    <link href="/css/theme.css?1740029466" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1740029466" rel="stylesheet">
+    <link href="/css/nucleus.css?1740029467" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1740029467" rel="stylesheet">
+    <link href="/css/hybrid.css?1740029467" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1740029467" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1740029467" rel="stylesheet">
+    <link href="/css/auto-complete.css?1740029467" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1740029467" rel="stylesheet">
+    <link href="/css/theme.css?1740029467" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1740029467" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1740029466" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1740029467" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1740029466"></script>
+    <script src="/js/jquery-3.3.1.min.js?1740029467"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/6-enriching/6.3-enrich-transformed-data/">
+  <body class="" data-url="/vi/3-discovering-cataloging/3-1-create-a-glue-crawler/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1740029466"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1740029466"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1740029467"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1740029467"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1313\/";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1740029466"></script>
+<script type="text/javascript" src="/js/search.js?1740029467"></script>
 
     
   </div>
@@ -82,13 +82,13 @@
  
   
     
-    <li data-nav-id="/1-introduction/" title="Introduction" class="dd-item 
+    <li data-nav-id="/vi/1-introduction/" title="Giới thiệu" class="dd-item 
         
         
         
         ">
-      <a href="/1-introduction/">
-           <b> 1. </b> Introduction
+      <a href="/vi/1-introduction/">
+           <b> 1. </b> Giới thiệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-preparation/" title="Prepareation" class="dd-item 
+    <li data-nav-id="/vi/2-preparation/" title="Các Bước Chuẩn Bị" class="dd-item 
         
         
         
         ">
-      <a href="/2-preparation/">
-           <b> 2. </b> Prepareation
+      <a href="/vi/2-preparation/">
+           <b> 2. </b> Các Bước Chuẩn Bị
           
             <i class="fas fa-check read-icon"></i>
           
@@ -134,575 +134,13 @@
  
   
     
-    <li data-nav-id="/3-discovering-cataloging/" title="Discovering and Cataloging Data" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/3-discovering-cataloging/">
-           <b> 3. </b> Discovering and Cataloging Data
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/3-discovering-cataloging/3-1-create-a-glue-crawler/" title="Create a Glue Crawler" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/3-discovering-cataloging/3-1-create-a-glue-crawler/">
-           <b> 3.1. </b> Create a Glue Crawler
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/3-discovering-cataloging/3.2-run-the-glue-crawler/" title="Run the Glue Crawler" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/3-discovering-cataloging/3.2-run-the-glue-crawler/">
-           <b> 3.2. </b> Run the Glue Crawler
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/3-discovering-cataloging/3.3-review-the-metadata-in-glue-data-catalog/" title="Review the metadata in Glue Data Catalog" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/3-discovering-cataloging/3.3-review-the-metadata-in-glue-data-catalog/">
-           <b> 3.3. </b> Review the metadata in Glue Data Catalog
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/4-exploring/" title="Exploring Data" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/4-exploring/">
-           <b> 4. </b> Exploring Data
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/4-exploring/4.1-using-amazon-athena-for-the-first-time/" title="Using Amazon Athena for the first time" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/4-exploring/4.1-using-amazon-athena-for-the-first-time/">
-           <b> 4.1. </b> Using Amazon Athena for the first time
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/4-exploring/4.2-preview-table-data/" title="Preview table data" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/4-exploring/4.2-preview-table-data/">
-           <b> 4.2. </b> Preview table data
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/4-exploring/4.3-working-with-csv-data-enclosed-in-quotes/" title="Working with CSV data enclosed in quotes" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/4-exploring/4.3-working-with-csv-data-enclosed-in-quotes/">
-           <b> 4.3. </b> Working with CSV data enclosed in quotes
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/4-exploring/4.4-run-sql-queries-to-explore-the-data/" title="Run SQL queries to explore the data" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/4-exploring/4.4-run-sql-queries-to-explore-the-data/">
-           <b> 4.4. </b> Run SQL queries to explore the data
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-transforming/" title="Transforming Data" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-transforming/">
-           <b> 5. </b> Transforming Data
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-transforming/5.1-create-a-job-using-glue-studio/" title="Create a job using Glue Studio" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-transforming/5.1-create-a-job-using-glue-studio/">
-           <b> 5.1. </b> Create a job using Glue Studio
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-transforming/5.2-add-a-data-source/" title="Add a data source" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-transforming/5.2-add-a-data-source/">
-           <b> 5.2. </b> Add a data source
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-transforming/5.3-remove-records-with-null-values/" title="Remove records with NULL values" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-transforming/5.3-remove-records-with-null-values/">
-           <b> 5.3. </b> Remove records with NULL values
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-transforming/5.4-filter-records/" title="Filter records" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-transforming/5.4-filter-records/">
-           <b> 5.4. </b> Filter records
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-transforming/5.5-add-another-data-source/" title="Add another data source" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-transforming/5.5-add-another-data-source/">
-           <b> 5.5. </b> Add another data source
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-transforming/5.6-join-data/" title="Join data" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-transforming/5.6-join-data/">
-           <b> 5.6. </b> Join data
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-transforming/5.7-add-and-join-another-dataset/" title="Add and join another dataset" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-transforming/5.7-add-and-join-another-dataset/">
-           <b> 5.7. </b> Add and join another dataset
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-transforming/5.8-transform-data-and-save-to-target/" title="Transform data and save to target" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-transforming/5.8-transform-data-and-save-to-target/">
-           <b> 5.8. </b> Transform data and save to target
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-transforming/5.9-run-the-job/" title="Run the job" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-transforming/5.9-run-the-job/">
-           <b> 5.9. </b> Run the job
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/6-enriching/" title="Enriching Data" class="dd-item 
+    <li data-nav-id="/vi/3-discovering-cataloging/" title="Lập danh mục dữ liệu" class="dd-item 
         parent
         
         
         ">
-      <a href="/6-enriching/">
-           <b> 6. </b> Enriching Data
+      <a href="/vi/3-discovering-cataloging/">
+           <b> 3. </b> Lập danh mục dữ liệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -727,69 +165,69 @@
  
   
     
-    <li data-nav-id="/6-enriching/6.1-catalog-transformed-data/" title="Catalog transformed data" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/6-enriching/6.1-catalog-transformed-data/">
-           <b> 6.1. </b> Catalog transformed data
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/6-enriching/6.2-validate-transformed-data/" title="Validate transformed data" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/6-enriching/6.2-validate-transformed-data/">
-           <b> 6.2. </b> Validate transformed data
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/6-enriching/6.3-enrich-transformed-data/" title="Enrich transformed data" class="dd-item 
+    <li data-nav-id="/vi/3-discovering-cataloging/3-1-create-a-glue-crawler/" title="Khởi tạo Glue Crawler" class="dd-item 
         
         active
         
         ">
-      <a href="/6-enriching/6.3-enrich-transformed-data/">
-           <b> 6.3. </b> Enrich transformed data
+      <a href="/vi/3-discovering-cataloging/3-1-create-a-glue-crawler/">
+           <b> 3.1. </b> Khởi tạo Glue Crawler
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-discovering-cataloging/3.2-run-the-glue-crawler/" title="Khởi chạy Glue Crawler" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-discovering-cataloging/3.2-run-the-glue-crawler/">
+           <b> 3.2. </b> Khởi chạy Glue Crawler
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-discovering-cataloging/3.3-review-the-metadata-in-glue-data-catalog/" title="Xem lại metadata trong Glue Data Catalog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-discovering-cataloging/3.3-review-the-metadata-in-glue-data-catalog/">
+           <b> 3.3. </b> Xem lại metadata trong Glue Data Catalog
           
             <i class="fas fa-check read-icon"></i>
           
@@ -818,13 +256,13 @@
  
   
     
-    <li data-nav-id="/7-visualizing/" title="Visualizing Data" class="dd-item 
+    <li data-nav-id="/vi/4-exploring/" title="Khám phá dữ liệu" class="dd-item 
         
         
         
         ">
-      <a href="/7-visualizing/">
-           <b> 7. </b> Visualizing Data
+      <a href="/vi/4-exploring/">
+           <b> 4. </b> Khám phá dữ liệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -849,13 +287,13 @@
  
   
     
-    <li data-nav-id="/7-visualizing/7.1-using-amazon-quicksight-for-the-first-time/" title="Using Amazon QuickSight for the first time" class="dd-item 
+    <li data-nav-id="/vi/4-exploring/4.1-using-amazon-athena-for-the-first-time/" title="Sử dụng Amazon Athena lần đầu tiên" class="dd-item 
         
         
         
         ">
-      <a href="/7-visualizing/7.1-using-amazon-quicksight-for-the-first-time/">
-           <b> 7.1. </b> Using Amazon QuickSight for the first time
+      <a href="/vi/4-exploring/4.1-using-amazon-athena-for-the-first-time/">
+           <b> 4.1. </b> Sử dụng Amazon Athena lần đầu tiên
           
             <i class="fas fa-check read-icon"></i>
           
@@ -877,13 +315,13 @@
  
   
     
-    <li data-nav-id="/7-visualizing/7.2-connect-to-a-data-source/" title="Connect to a data source" class="dd-item 
+    <li data-nav-id="/vi/4-exploring/4.2-preview-table-data/" title="Xem trước dữ liệu bảng" class="dd-item 
         
         
         
         ">
-      <a href="/7-visualizing/7.2-connect-to-a-data-source/">
-           <b> 7.2. </b> Connect to a data source
+      <a href="/vi/4-exploring/4.2-preview-table-data/">
+           <b> 4.2. </b> Xem trước dữ liệu bảng
           
             <i class="fas fa-check read-icon"></i>
           
@@ -905,13 +343,13 @@
  
   
     
-    <li data-nav-id="/7-visualizing/7.3-review-dataset/" title="Review dataset" class="dd-item 
+    <li data-nav-id="/vi/4-exploring/4.3-working-with-csv-data-enclosed-in-quotes/" title="Làm việc với dữ liệu CSV được bao trong dấu nháy kép" class="dd-item 
         
         
         
         ">
-      <a href="/7-visualizing/7.3-review-dataset/">
-           <b> 7.3 </b> Review dataset
+      <a href="/vi/4-exploring/4.3-working-with-csv-data-enclosed-in-quotes/">
+           <b> 4.3. </b> Làm việc với dữ liệu CSV được bao trong dấu nháy kép
           
             <i class="fas fa-check read-icon"></i>
           
@@ -933,13 +371,13 @@
  
   
     
-    <li data-nav-id="/7-visualizing/7.4-visualize-data/" title="Visualizing Data" class="dd-item 
+    <li data-nav-id="/vi/4-exploring/4.4-run-sql-queries-to-explore-the-data/" title="Chạy truy vấn SQL để khám phá dữ liệu" class="dd-item 
         
         
         
         ">
-      <a href="/7-visualizing/7.4-visualize-data/">
-           <b> 7.4 </b> Visualizing Data
+      <a href="/vi/4-exploring/4.4-run-sql-queries-to-explore-the-data/">
+           <b> 4.4. </b> Chạy truy vấn SQL để khám phá dữ liệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -968,13 +406,575 @@
  
   
     
-    <li data-nav-id="/8-clean/" title="Clean up resources" class="dd-item 
+    <li data-nav-id="/vi/5-transforming/" title="Chuyển đổi dữ liệu" class="dd-item 
         
         
         
         ">
-      <a href="/8-clean/">
-           <b> 8. </b> Clean up resources
+      <a href="/vi/5-transforming/">
+           <b> 5. </b> Chuyển đổi dữ liệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-transforming/5.1-create-a-job-using-glue-studio/" title="Tạo một job bằng Glue Studio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-transforming/5.1-create-a-job-using-glue-studio/">
+           <b> 5.1. </b> Tạo một job bằng Glue Studio
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-transforming/5.2-add-a-data-source/" title="Thêm nguồn dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-transforming/5.2-add-a-data-source/">
+           <b> 5.2. </b> Thêm nguồn dữ liệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-transforming/5.3-remove-records-with-null-values/" title="Loại bỏ các bản ghi có giá trị NULL" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-transforming/5.3-remove-records-with-null-values/">
+           <b> 5.3. </b> Loại bỏ các bản ghi có giá trị NULL
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-transforming/5.4-filter-records/" title="Lọc dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-transforming/5.4-filter-records/">
+           <b> 5.4. </b> Lọc dữ liệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-transforming/5.5-add-another-data-source/" title="Thêm một nguồn dữ liệu khác" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-transforming/5.5-add-another-data-source/">
+           <b> 5.5. </b> Thêm một nguồn dữ liệu khác
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-transforming/5.6-join-data/" title="Kết hợp dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-transforming/5.6-join-data/">
+           <b> 5.6. </b> Kết hợp dữ liệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-transforming/5.7-add-and-join-another-dataset/" title="Thêm và kết hợp một tập dữ liệu khác" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-transforming/5.7-add-and-join-another-dataset/">
+           <b> 5.7. </b> Thêm và kết hợp một tập dữ liệu khác
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-transforming/5.8-transform-data-and-save-to-target/" title="Chuyển đổi dữ liệu và lưu vào đích" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-transforming/5.8-transform-data-and-save-to-target/">
+           <b> 5.8. </b> Chuyển đổi dữ liệu và lưu vào đích
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-transforming/5.9-run-the-job/" title="Chạy job" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-transforming/5.9-run-the-job/">
+           <b> 5.9. </b> Chạy job
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-enriching/" title="Làm phong phú dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-enriching/">
+           <b> 6. </b> Làm phong phú dữ liệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-enriching/6.1-catalog-transformed-data/" title="Lập danh mục dữ liệu đã được chuyển đổi" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-enriching/6.1-catalog-transformed-data/">
+           <b> 6.1. </b> Lập danh mục dữ liệu đã được chuyển đổi
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-enriching/6.2-validate-transformed-data/" title="Xác thực dữ liệu đã được chuyển đổi" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-enriching/6.2-validate-transformed-data/">
+           <b> 6.2. </b> Xác thực dữ liệu đã được chuyển đổi
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-enriching/6.3-enrich-transformed-data/" title="Làm giàu dữ liệu đã được chuyển đổi" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-enriching/6.3-enrich-transformed-data/">
+           <b> 6.3 </b> Làm giàu dữ liệu đã được chuyển đổi
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-visualizing/" title="Trực quan hóa dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-visualizing/">
+           <b> 7. </b> Trực quan hóa dữ liệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-visualizing/7.1-using-amazon-quicksight-for-the-first-time/" title="Sử dụng Amazon QuickSight lần đầu tiên" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-visualizing/7.1-using-amazon-quicksight-for-the-first-time/">
+           <b> 7.1. </b> Sử dụng Amazon QuickSight lần đầu tiên
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-visualizing/7.2-connect-to-a-data-source/" title="Kết nối với nguồn dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-visualizing/7.2-connect-to-a-data-source/">
+           <b> 7.2. </b> Kết nối với nguồn dữ liệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-visualizing/7.3-review-dataset/" title="Xem xét bộ dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-visualizing/7.3-review-dataset/">
+           <b> 7.3 </b> Xem xét bộ dữ liệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-visualizing/7.4-visualize-data/" title="Trực quan hóa dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-visualizing/7.4-visualize-data/">
+           <b> 7.4 </b> Trực quan hóa dữ liệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/8-clean/" title="Dọn dẹp tài nguyên" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/8-clean/">
+           <b> 8. </b> Dọn dẹp tài nguyên
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1021,7 +1021,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:1313/vi/6-enriching/6.3-enrich-transformed-data/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/3-discovering-cataloging/3-1-create-a-glue-crawler/" selected>Tiếng Việt</option>
                     
                   
               
@@ -1035,7 +1035,7 @@
                   
                     
                     
-                      <option id="en" value="//localhost:1313/6-enriching/6.3-enrich-transformed-data/" selected>English</option>
+                      <option id="en" value="//localhost:1313/3-discovering-cataloging/3-1-create-a-glue-crawler/">English</option>
                     
                   
               
@@ -1127,7 +1127,7 @@
             
           
           
-            <a href='/'>AWS Serverless Data Lake Jumpstart</a> > <a href='/6-enriching/'>Enriching Data</a> > Enrich transformed data
+            <a href='/vi/'>Xây dựng data lake không máy chủ với AWS</a> > <a href='/vi/3-discovering-cataloging/'>Lập danh mục dữ liệu</a> > Khởi tạo Glue Crawler
           
         
           
@@ -1142,11 +1142,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#làm-giàu-dữ-liệu-đã-chuyển-đổi">Làm giàu dữ liệu đã chuyển đổi</a></li>
-      </ul>
-    </li>
+    <li><a href="#tạo-glue-crawler">Tạo Glue Crawler</a></li>
   </ul>
 </nav>
     </div>
@@ -1164,7 +1160,7 @@
           
             <h1>
               
-              Enrich transformed data
+              Khởi tạo Glue Crawler
             </h1>
           
 
@@ -1172,84 +1168,69 @@
 
 
 
-	<h3 id="làm-giàu-dữ-liệu-đã-chuyển-đổi">Làm giàu dữ liệu đã chuyển đổi</h3>
+	<h2 id="tạo-glue-crawler">Tạo Glue Crawler</h2>
+
+<div class="notices info" ><p><strong>Glue Crawler</strong> là một tính năng giúp tự động suy luận <strong>schema của cơ sở dữ liệu và bảng</strong> từ dữ liệu nguồn, sau đó lưu trữ <strong>metadata</strong> tương ứng trong <strong>AWS Glue Data Catalog</strong>.</p>
+</div>
+
 <ol>
-<li>Chạy câu truy vấn sau để tạo một view, làm giàu bảng với dữ liệu bổ sung:</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">VIEW</span> v_yellow_tripdata
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">AS</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">CASE</span> vendor_id
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Creative Mobile&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;VeriFone&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">ELSE</span> <span style="color:#e6db74">&#39;No Data&#39;</span>
-</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">END</span> <span style="color:#e6db74">&#34;vendor_name&#34;</span>,
-</span></span><span style="display:flex;"><span>       pickup_datetime,
-</span></span><span style="display:flex;"><span>       dropoff_datetime,
-</span></span><span style="display:flex;"><span>       passenger_count,
-</span></span><span style="display:flex;"><span>       trip_distance,
-</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">CASE</span> ratecodeid
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Standard Rate&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;JFK&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Newark&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Nassau/Westchester&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">5</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Negotiated Fare&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">6</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Group Ride&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">99</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Special Rate&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">ELSE</span> <span style="color:#e6db74">&#39;No Data&#39;</span>
-</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">END</span> <span style="color:#e6db74">&#34;rate_type&#34;</span>,
-</span></span><span style="display:flex;"><span>       store_and_fwd_flag,
-</span></span><span style="display:flex;"><span>       pu_borough,
-</span></span><span style="display:flex;"><span>       pu_zone,
-</span></span><span style="display:flex;"><span>       pu_service_zone,
-</span></span><span style="display:flex;"><span>       do_borough,
-</span></span><span style="display:flex;"><span>       do_zone,
-</span></span><span style="display:flex;"><span>       do_service_zone,
-</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">CASE</span> payment_type
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Credit Card&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Cash&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;No Charge&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Dispute&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">5</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Unknown&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">WHEN</span> <span style="color:#ae81ff">6</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Voided Trip&#39;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">ELSE</span> <span style="color:#e6db74">&#39;No Data&#39;</span>
-</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">END</span> <span style="color:#e6db74">&#34;payment_type&#34;</span>,
-</span></span><span style="display:flex;"><span>       fare_amount,
-</span></span><span style="display:flex;"><span>       extra,
-</span></span><span style="display:flex;"><span>       mta_tax,
-</span></span><span style="display:flex;"><span>       tip_amount,
-</span></span><span style="display:flex;"><span>       tolls_amount,
-</span></span><span style="display:flex;"><span>       improvement_surcharge,
-</span></span><span style="display:flex;"><span>       congestion_surcharge,
-</span></span><span style="display:flex;"><span>       total_amount
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>   yellow_tripdata;
-</span></span></code></pre></div><p><img alt="001" src="../../images/6.enriching/6.3/001.png"></p>
-<ol start="2">
 <li>
-<p>Chọn <strong>Preview table</strong> để kiểm tra dữ liệu trong view <code>v_yellow_tripdata</code>.
-<img alt="002" src="../../images/6.enriching/6.3/002.png">
-<img alt="003" src="../../images/6.enriching/6.3/003.png"></p>
+<p>Truy cập vào <strong>AWS Glue Console</strong>.<br>
+<img alt="001" src="../../../images/3.discovering-cataloging/3.1/001.png"></p>
 </li>
 <li>
-<p>Chạy câu truy vấn sau để lấy thông tin chi tiết:</p>
+<p>Ở menu điều hướng bên trái, nhấp vào <strong>Crawlers</strong>.<br>
+<img alt="002" src="../../../images/3.discovering-cataloging/3.1/002.png"></p>
+</li>
+<li>
+<p>Trên trang <strong>Crawlers</strong>, nhấp vào <strong>Create a crawler</strong>.<br>
+<img alt="003" src="../../../images/3.discovering-cataloging/3.1/003.png"></p>
+</li>
+<li>
+<p>Trong mục đặt tên, nhập <code>nyc-taxi-crawler</code> rồi nhấp <strong>Next</strong>.<br>
+<img alt="004" src="../../../images/3.discovering-cataloging/3.1/004.png"></p>
+</li>
+<li>
+<p>Ở màn hình <strong>Choose data sources and classifiers</strong>, điền các thông tin sau và nhấp <strong>Next</strong>:</p>
+<ul>
+<li>Nhấp vào <strong>Add a data source</strong>.<br>
+<img alt="005-1" src="../../../images/3.discovering-cataloging/3.1/005-1.png"></li>
+<li>Chọn <strong>Data source</strong> → <strong>S3</strong>.</li>
+<li>Chọn <strong>Location of S3 data</strong> → <strong>In this account</strong>.</li>
+<li>Nhập đường dẫn S3: <code>s3://serverlessanalytics-[your-account-id]-raw/nyc-taxi/</code>.</li>
+<li>Trong mục <strong>Subsequent crawler runs</strong>, chọn <strong>Crawl all sub-folders</strong>.</li>
+<li>Nhấp <strong>Add an S3 data source</strong>.
+<img alt="005-2" src="../../../images/3.discovering-cataloging/3.1/005-2.png"></li>
+</ul>
+</li>
+<li>
+<p>Ở màn hình <strong>Configure security settings</strong>, chọn <strong>ServerlessAnalyticsRole</strong> trong danh sách <strong>Existing IAM role</strong>, sau đó nhấp <strong>Next</strong>.
+<img alt="006" src="../../../images/3.discovering-cataloging/3.1/006.png"></p>
+</li>
+<li>
+<p>Ở màn hình <strong>Set output and scheduling</strong>, nhấp vào <strong>Add database</strong>.<br>
+<img alt="007-1" src="../../../images/3.discovering-cataloging/3.1/007-1.png"></p>
+<ul>
+<li>Nhập <code>nyctaxi_db</code> làm tên cơ sở dữ liệu.</li>
+<li>Nhấp <strong>Create database</strong>.<br>
+<img alt="007-2" src="../../../images/3.discovering-cataloging/3.1/007-2.png"></li>
+</ul>
+</li>
+<li>
+<p>Quay lại tab trước (<strong>Set output and scheduling</strong>), nhấp <strong>Refresh</strong> trong mục <strong>Target database</strong> và chọn <strong>nyctaxi_db</strong> vừa tạo.</p>
+</li>
+<li>
+<p>Trong mục <strong>Table name prefix</strong>, nhập <strong>raw_</strong> (tùy chọn).</p>
+</li>
+<li>
+<p>Ở mục <strong>Crawler schedule</strong>, giữ nguyên tần suất <strong>On demand</strong>, sau đó nhấp <strong>Next</strong>.<br>
+<img alt="007-3" src="../../../images/3.discovering-cataloging/3.1/007-3.png"></p>
+</li>
+<li>
+<p>Xem lại thông tin, sau đó nhấp <strong>Create crawler</strong> để hoàn tất. 🚀
+<img alt="008" src="../../../images/3.discovering-cataloging/3.1/008.png"></p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> vendor_name <span style="color:#e6db74">&#34;Vendor&#34;</span>,
-</span></span><span style="display:flex;"><span>       rate_type <span style="color:#e6db74">&#34;Rate Type&#34;</span>, 
-</span></span><span style="display:flex;"><span>       payment_type <span style="color:#e6db74">&#34;Payment Type&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(fare_amount), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Fare&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(extra), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Extra&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(mta_tax), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;MTA&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(tip_amount), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Tip&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(tolls_amount), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Toll&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(improvement_surcharge), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Improvement&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(congestion_surcharge), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Congestion&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#66d9ef">AVG</span>(total_amount), <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">&#34;Total&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>   v_yellow_tripdata
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> vendor_name,
-</span></span><span style="display:flex;"><span>         rate_type,
-</span></span><span style="display:flex;"><span>         payment_type
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>;
-</span></span></code></pre></div><p><img alt="004" src="../../images/6.enriching/6.3/004.png"></p>
 
 
 
@@ -1325,6 +1306,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1334,6 +1316,254 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1449,22 +1679,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1472,242 +1686,6 @@
             
             
                 
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1811,10 +1789,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/6-enriching/6.2-validate-transformed-data/" title="Validate transformed data"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/3-discovering-cataloging/" title="Lập danh mục dữ liệu"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/7-visualizing/" title="Visualizing Data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/3-discovering-cataloging/3.2-run-the-glue-crawler/" title="Khởi chạy Glue Crawler" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1824,19 +1802,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1740029466"></script>
-    <script src="/js/perfect-scrollbar.min.js?1740029466"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1740029466"></script>
-    <script src="/js/jquery.sticky.js?1740029466"></script>
-    <script src="/js/featherlight.min.js?1740029466"></script>
-    <script src="/js/highlight.pack.js?1740029466"></script>
+    <script src="/js/clipboard.min.js?1740029467"></script>
+    <script src="/js/perfect-scrollbar.min.js?1740029467"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1740029467"></script>
+    <script src="/js/jquery.sticky.js?1740029467"></script>
+    <script src="/js/featherlight.min.js?1740029467"></script>
+    <script src="/js/highlight.pack.js?1740029467"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1740029466"></script>
-    <script src="/js/learn.js?1740029466"></script>
-    <script src="/js/hugo-learn.js?1740029466"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1740029467"></script>
+    <script src="/js/learn.js?1740029467"></script>
+    <script src="/js/hugo-learn.js?1740029467"></script>
 
-    <link href="/mermaid/mermaid.css?1740029466" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1740029466"></script>
+    <link href="/mermaid/mermaid.css?1740029467" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1740029467"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

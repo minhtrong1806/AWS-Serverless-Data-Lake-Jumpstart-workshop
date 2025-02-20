@@ -14,7 +14,7 @@
 	"content": "Tạo một Glue Crawler Vào AWS Glue Console. Trong menu điều hướng bên trái, chọn Crawlers. Trên trang Crawlers, nhấn Create crawler. Đặt tên crawler là nyc-yellow-tripdata-parquet-crawler, sau đó nhấn Next. Trên màn hình Choose data sources and classifiers, nhập các thông tin sau và nhấn Next.\nNhấn Add a data source. Chọn Data source – S3. Chọn Location of S3 data - In this account. Nhập Include S3 path: s3://serverlessanalytics-[your-account-id]-transformed/nyc-taxi/yellow-tripdata. Đối với các lần chạy crawler tiếp theo, chọn Crawl all sub-folders. Nhấn Add an S3 data source. Trên màn hình Configure security settings, chọn ServerlessAnalyticsRole từ IAM role hiện có, sau đó nhấn Next. Trên màn hình Set output and scheduling, chọn nyctaxi_db là database.\nĐể Crawler schedule, chọn tần suất là On demand, sau đó nhấn Next. Xem lại các thông tin của crawler và nhấn Create crawler. Trên trang Crawlers, chọn nyc-yellow-tripdata-parquet-crawler, sau đó nhấn Run crawler. "
 },
 {
-	"uri": "//localhost:1313/3-discovering-cataloging/3.1-create-a-glue-crawler/",
+	"uri": "//localhost:1313/3-discovering-cataloging/3-1-create-a-glue-crawler/",
 	"title": "Create a Glue Crawler",
 	"tags": [],
 	"description": "",
